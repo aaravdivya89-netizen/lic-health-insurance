@@ -79,42 +79,34 @@ function setLang(lang){
  document.getElementById('hiBtn').classList.toggle('active',lang==='hi');
 }
 </script>
-<!-- OFFICE LOCATION -->
-<section style="
-  padding: 50px 20px;
-  text-align: center;
-  background: #f5f8ff;
-  color: #123;
-">
-  <h2 style="font-size: 30px;">Our Office Location</h2>
+<section style="padding:40px 20px;text-align:center;background:#f5f8ff;">
 
-  <p>
-    E21 Guruji Lekhraj Residency, Asola,
-    Fatehpur Beri, New Delhi - 110074
-  </p>
+  <h2>Our Office Location</h2>
+
+  <p>F Block, Asola Bandh Rd, Regency Farms, Asola, New Delhi, Delhi 110074</p>
+
+  <div style="margin:20px;">
+    <button onclick="changeMap('m')">2D View</button>
+    <button onclick="changeMap('k')">Satellite View</button>
+  </div>
 
   <iframe
-    src="https://maps.google.com/maps?q=E21%20Guruji%20Lekhraj%20Residency%20Asola%20Fatehpur%20Beri%20110074&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    id="officeMap"
     width="100%"
     height="450"
-    style="border:0; border-radius:15px;"
-    allowfullscreen
-    loading="lazy">
+    style="border:0;border-radius:15px;"
+    src="https://maps.google.com/maps?q=F%20Block%2C%20Asola%20Bandh%20Rd%2C%20Regency%20Farms%2C%20Asola%2C%20New%20Delhi%20110074&t=m&z=17&output=embed"
+    loading="lazy"
+    allowfullscreen>
   </iframe>
 
-  <br><br>
-
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=E21%20Guruji%20Lekhraj%20Residency%20Asola%20Fatehpur%20Beri%20110074"
-    target="_blank"
-    style="
-      background:#174ea6;
-      color:white;
-      padding:12px 25px;
-      border-radius:8px;
-      text-decoration:none;
-    ">
-    Open in Google Maps
-  </a>
 </section>
+
+<script>
+function changeMap(type) {
+  document.getElementById("officeMap").src =
+    "https://maps.google.com/maps?q=F%20Block%2C%20Asola%20Bandh%20Rd%2C%20Regency%20Farms%2C%20Asola%2C%20New%20Delhi%20110074&t="
+    + type + "&z=17&output=embed";
+}
+</script>
 </body></html>
